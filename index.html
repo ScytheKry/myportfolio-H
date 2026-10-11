@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portofolio Habib Aqil Nicko — programming, digital projects, business, and visual stories."
+    />
+    <title>Habib Aqil Nicko — Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              paper: "#F5F3ED",
+              ink: "#17221D",
+              moss: "#355C49",
+              lime: "#D7F36A",
+              muted: "#68736B",
+              line: "#D9DED5",
+            },
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+              display: [
+                "Space Grotesk",
+                "Inter",
+                "ui-sans-serif",
+                "sans-serif",
+              ],
+            },
+            boxShadow: {
+              soft: "0 12px 35px rgba(23, 34, 29, .08)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body
+    class="bg-paper text-ink antialiased selection:bg-lime selection:text-ink"
+  >
+    <!-- Navigation -->
+    <header
+      class="sticky top-0 z-40 border-b border-line/90 bg-paper/90 backdrop-blur-xl"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-12"
+        aria-label="Navigasi utama"
+      >
+        <a href="#home" class="display text-xl font-bold tracking-tight"
+          >Habib
+          <span
+            class="ml-2 hidden text-xs font-medium tracking-[.18em] text-muted sm:inline"
+            >PORTFOLIO / 2026</span
+          ></a
+        >
+        <div class="hidden items-center gap-7 text-sm font-medium md:flex">
+          <a class="nav-link hover:text-moss" href="#about">About</a>
+          <a class="nav-link hover:text-moss" href="#work">Work</a>
+          <a class="nav-link hover:text-moss" href="#skills">Skills</a>
+          <a class="nav-link hover:text-moss" href="#contact">Contact</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a
+            href="#contact"
+            class="hidden rounded-full border border-ink px-4 py-2 text-xs font-semibold transition hover:bg-ink hover:text-paper sm:inline-flex"
+            >Let’s talk <span class="ml-2">↗</span></a
+          >
+          <button
+            id="menu-toggle"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-xl md:hidden"
+            aria-label="Buka menu"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+        </div>
+      </nav>
+      <div
+        id="mobile-menu"
+        class="hidden border-t border-line bg-paper px-5 py-3 md:hidden"
+      >
+        <div class="flex flex-col gap-3 text-sm font-medium">
+          <a href="#about">About</a><a href="#work">Work</a
+          ><a href="#skills">Skills</a><a href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section
+        id="home"
+        class="mx-auto grid max-w-7xl gap-10 px-5 pb-16 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:px-12 lg:pb-24"
+      >
+        <div class="reveal">
+          <p
+            class="mono mb-5 flex items-center gap-3 text-[11px] uppercase tracking-[.22em] text-moss"
+          >
+            <span class="inline-block h-px w-8 bg-moss"></span> Developer in
+            progress · Bekasi, ID
+          </p>
+          <h1
+            class="display max-w-3xl text-5xl font-semibold leading-[.98] tracking-[-.06em] sm:text-6xl lg:text-7xl xl:text-[5.7rem]"
+          >
+            Making ideas<br />
+            <span class="text-moss">useful on screen.</span>
+          </h1>
+          <p
+            class="mt-7 max-w-xl text-base leading-7 text-muted sm:text-lg sm:leading-8"
+          >
+            Halo, saya Habib — saya membangun website, bereksperimen dengan
+            teknologi, dan mengubah ide menjadi karya digital yang berguna.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a
+              href="#work"
+              class="inline-flex items-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-moss"
+              >Lihat karya <span class="ml-3">↓</span></a
+            >
+            <a
+              href="#contact"
+              class="inline-flex items-center rounded-full border border-line px-6 py-3 text-sm font-semibold transition hover:border-ink"
+              >Hubungi saya ↗</a
+            >
+          </div>
+          <div
+            class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-muted"
+          >
+            <span class="flex items-center gap-2"
+              ><span class="h-2 w-2 rounded-full bg-[#78A66A]"></span> Open to
+              learning & collaboration</span
+            >
+            <span class="mono">HTML / CSS / JS</span>
+          </div>
+        </div>
+
+        <div class="reveal relative mx-auto w-full max-w-lg lg:ml-auto">
+          <div
+            class="absolute -right-2 -top-3 z-10 rotate-6 rounded-full bg-lime px-4 py-3 text-center text-xs font-bold leading-tight shadow-soft sm:-right-4 sm:top-4"
+          >
+            Curious<br />by nature ↗
+          </div>
+          <div
+            class="relative overflow-hidden rounded-[2rem] bg-moss p-5 text-paper sm:p-7"
+          >
+            <div class="absolute inset-0 opacity-20 grain"></div>
+            <div class="relative flex items-start justify-between">
+              <span
+                class="mono text-[10px] uppercase tracking-[.2em] text-white/70"
+                >Personal snapshot</span
+              >
+              <span class="mono text-[10px] text-white/70">01 — 04</span>
+            </div>
+            <div class="relative mt-14 sm:mt-20">
+              <div
+                class="display text-7xl font-semibold leading-none tracking-[-.08em] sm:text-8xl"
+              >
+                H<span class="text-lime">.</span>
+              </div>
+              <p class="mt-4 max-w-xs text-sm leading-6 text-white/80">
+                Belajar dengan membangun. Bertumbuh lewat eksperimen. Fokus pada
+                hal yang benar-benar menyelesaikan masalah.
+              </p>
+            </div>
+            <div
+              class="relative mt-14 flex items-end justify-between border-t border-white/20 pt-4 sm:mt-20"
+            >
+              <div>
+                <p
+                  class="mono text-[10px] uppercase tracking-widest text-white/60"
+                >
+                  Currently exploring
+                </p>
+                <p class="mt-1 text-sm font-medium">
+                  Web development & digital business
+                </p>
+              </div>
+              <div
+                class="grid h-12 w-12 place-items-center rounded-full bg-lime text-xl text-ink"
+              >
+                ↗
+              </div>
+            </div>
+          </div>
+          <p
+            class="mono mt-3 text-right text-[10px] uppercase tracking-[.2em] text-muted"
+          >
+            A little bit of code, a lot of curiosity.
+          </p>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="border-y border-line bg-white/45">
+        <div
+          class="mx-auto grid max-w-7xl gap-8 px-5 py-14 sm:px-8 md:grid-cols-[.7fr_1.3fr] md:py-20 lg:px-12"
+        >
+          <div class="reveal">
+            <p class="mono text-[11px] uppercase tracking-[.2em] text-moss">
+              01 / A little about me
+            </p>
+            <h2
+              class="display mt-4 text-3xl font-semibold tracking-tight sm:text-4xl"
+            >
+              Not just pixels.<br />Purpose matters.
+            </h2>
+          </div>
+          <div class="reveal max-w-3xl">
+            <p class="text-lg leading-8 text-ink sm:text-xl sm:leading-9">
+              Saya tertarik pada persimpangan antara teknologi, desain, dan
+              kebutuhan nyata orang-orang. Saya menikmati proses memahami
+              masalah, mencoba pendekatan, lalu membangun solusi yang lebih
+              sederhana.
+            </p>
+            <p class="mt-5 leading-7 text-muted">
+              Saat ini saya terus mengembangkan fondasi web development sambil
+              mengerjakan proyek personal dan mengeksplorasi dunia bisnis
+              digital. Portofolio ini menjadi catatan proses belajar sekaligus
+              tempat untuk menunjukkan karya yang sudah saya buat.
+            </p>
+            <div class="mt-7 grid grid-cols-2 gap-4 sm:grid-cols-3">
+              <div class="border-l-2 border-lime pl-3">
+                <p class="display text-xl font-semibold">Build</p>
+                <p class="mt-1 text-xs text-muted">Belajar lewat praktik</p>
+              </div>
+              <div class="border-l-2 border-moss pl-3">
+                <p class="display text-xl font-semibold">Explore</p>
+                <p class="mt-1 text-xs text-muted">Mencoba hal baru</p>
+              </div>
+              <div class="border-l-2 border-line pl-3">
+                <p class="display text-xl font-semibold">Improve</p>
+                <p class="mt-1 text-xs text-muted">Iterasi terus-menerus</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work -->
+      <section
+        id="work"
+        class="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12"
+      >
+        <div
+          class="reveal flex flex-col justify-between gap-6 sm:flex-row sm:items-end"
+        >
+          <div>
+            <p class="mono text-[11px] uppercase tracking-[.2em] text-moss">
+              02 / Selected work
+            </p>
+            <h2
+              class="display mt-3 text-4xl font-semibold tracking-tight sm:text-5xl"
+            >
+              Things I’ve made<span class="text-moss">.</span>
+            </h2>
+            <p class="mt-3 max-w-xl leading-7 text-muted">
+              Dua sisi yang saya eksplorasi: membangun produk digital dan
+              mendokumentasikan cerita lewat visual.
+            </p>
+          </div>
+          <div
+            class="flex flex-wrap gap-2"
+            role="group"
+            aria-label="Filter kategori proyek"
+          >
+            <button
+              class="filter-btn rounded-full border border-line px-4 py-2 text-sm font-medium transition"
+              data-filter="all"
+              aria-pressed="true"
+            >
+              All work
+              <span class="ml-1 text-xs opacity-60" id="all-count">04</span>
+            </button>
+            <button
+              class="filter-btn rounded-full border border-line px-4 py-2 text-sm font-medium transition"
+              data-filter="programming"
+              aria-pressed="false"
+            >
+              Programming
+            </button>
+            <button
+              class="filter-btn rounded-full border border-line px-4 py-2 text-sm font-medium transition"
+              data-filter="visual"
+              aria-pressed="false"
+            >
+              Video / Business
+            </button>
+          </div>
+        </div>
+
+        <!-- Programming projects -->
+        <div class="mt-10">
+          <div class="mb-4 flex items-center justify-between">
+            <h3 class="display text-xl font-semibold">
+              <span class="mr-2 text-moss">↳</span>Programming projects
+            </h3>
+            <span class="mono text-[10px] uppercase tracking-widest text-muted"
+              >Web / Code</span
+            >
+          </div>
+          <div
+            id="programming-grid"
+            class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3"
+          >
+            <!-- Project cards are rendered by JavaScript from the projects array. -->
+          </div>
+        </div>
+
+        <!-- Video / business projects -->
+        <div class="mt-14">
+          <div class="mb-4 flex items-center justify-between">
+            <h3 class="display text-xl font-semibold">
+              <span class="mr-2 text-moss">↳</span>Video, business & photography
+            </h3>
+            <span class="mono text-[10px] uppercase tracking-widest text-muted"
+              >Visual stories</span
+            >
+          </div>
+          <p class="mb-5 max-w-2xl text-sm leading-6 text-muted">
+            Koleksi video portrait dari proyek bisnis, product showcase, event,
+            atau fotografi. Ganti video contoh dengan file milikmu di folder
+            <code class="rounded bg-white px-1.5 py-0.5 text-xs"
+              >assets/videos/</code
+            >.
+          </p>
+          <div
+            id="visual-grid"
+            class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            <!-- Video cards are rendered by JavaScript from the visualProjects array. -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+
+      <section id="skills" class="bg-ink text-paper">
+        <div class="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-12">
+          <!-- Heading -->
+          <div class="reveal mb-10">
+            <p class="mono text-[11px] uppercase tracking-[.2em] text-lime">
+              03 / Tools in my kit
+            </p>
+
+            <h2
+              class="display mt-4 text-3xl font-semibold tracking-tight sm:text-4xl"
+            >
+              Skills &<br />Expertise.
+            </h2>
+
+            <p class="mt-4 max-w-xl text-sm leading-7 text-white/60">
+              Teknologi dan kemampuan yang saya gunakan untuk membangun produk
+              digital, mengolah visual, dan mengembangkan bisnis.
+            </p>
+          </div>
+
+          <!-- ================= PROGRAMMING ================= -->
+          <div class="reveal mb-12">
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <p class="mono text-[10px] uppercase tracking-widest text-lime">
+                  Section 01
+                </p>
+                <h3 class="display mt-1 text-xl font-semibold sm:text-2xl">
+                  Programming
+                </h3>
+              </div>
+
+              <!-- Navigation arrows -->
+              <div class="flex gap-2">
+                <button
+                  type="button"
+                  class="skill-scroll-btn"
+                  data-target="programming-skills"
+                  data-direction="-1"
+                  aria-label="Scroll programming ke kiri"
+                >
+                  ←
+                </button>
+
+                <button
+                  type="button"
+                  class="skill-scroll-btn"
+                  data-target="programming-skills"
+                  data-direction="1"
+                  aria-label="Scroll programming ke kanan"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+
+            <div
+              id="programming-skills"
+              class="skills-track"
+              aria-label="Programming skills"
+            >
+              <!-- Kartu skill dibuat melalui script.js -->
+            </div>
+          </div>
+
+          <!-- ================= OTHERS ================= -->
+          <div class="reveal">
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <p class="mono text-[10px] uppercase tracking-widest text-lime">
+                  Section 02
+                </p>
+                <h3 class="display mt-1 text-xl font-semibold sm:text-2xl">
+                  Others
+                </h3>
+              </div>
+
+              <!-- Navigation arrows -->
+              <div class="flex gap-2">
+                <button
+                  type="button"
+                  class="skill-scroll-btn"
+                  data-target="other-skills"
+                  data-direction="-1"
+                  aria-label="Scroll other skills ke kiri"
+                >
+                  ←
+                </button>
+
+                <button
+                  type="button"
+                  class="skill-scroll-btn"
+                  data-target="other-skills"
+                  data-direction="1"
+                  aria-label="Scroll other skills ke kanan"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+
+            <div
+              id="other-skills"
+              class="skills-track"
+              aria-label="Other skills"
+            >
+              <!-- Kartu skill dibuat melalui script.js -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section
+        id="contact"
+        class="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12"
+      >
+        <div
+          class="reveal relative overflow-hidden rounded-[2rem] bg-lime p-7 sm:p-10 lg:p-14"
+        >
+          <div
+            class="absolute -right-10 -top-14 h-48 w-48 rounded-full border-[28px] border-ink/5 sm:h-64 sm:w-64"
+          ></div>
+          <p class="mono text-[11px] uppercase tracking-[.2em] text-moss">
+            04 / Your turn
+          </p>
+          <div
+            class="relative mt-4 flex flex-col justify-between gap-8 md:flex-row md:items-end"
+          >
+            <div>
+              <h2
+                class="display max-w-2xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+              >
+                Have something<br class="hidden sm:block" />
+                in mind?
+              </h2>
+              <p
+                class="mt-4 max-w-lg text-sm leading-7 text-ink/70 sm:text-base"
+              >
+                Punya ide, peluang kolaborasi, atau sekadar ingin ngobrol soal
+                teknologi? Silakan hubungi saya.
+              </p>
+            </div>
+            <div class="flex flex-col items-start gap-3">
+              <a
+                id="email-link"
+                href="mailto:hello@example.com"
+                class="inline-flex items-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-moss"
+                >Email me ↗</a
+              >
+              <a
+                id="github-link"
+                href="https://github.com/"
+                target="_blank"
+                rel="noreferrer"
+                class="text-sm font-semibold underline underline-offset-4"
+                >Find me on GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-line">
+      <div
+        class="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12"
+      >
+        <p>© <span id="year"></span> Habib Aqil Nicko. Made with curiosity.</p>
+        <a href="#home" class="font-medium text-ink hover:text-moss"
+          >Back to top ↑</a
+        >
+      </div>
+    </footer>
+
+    <!-- Video preview modal -->
+    <div
+      id="video-modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-ink/80 p-4 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div
+        class="relative w-full max-w-md rounded-3xl bg-paper p-4 shadow-2xl sm:p-5"
+      >
+        <div class="mb-3 flex items-center justify-between gap-4">
+          <div>
+            <p class="mono text-[10px] uppercase tracking-widest text-moss">
+              Video preview
+            </p>
+            <h3 id="modal-title" class="display mt-1 text-lg font-semibold">
+              Project video
+            </h3>
+          </div>
+          <button
+            id="modal-close"
+            class="grid h-10 w-10 place-items-center rounded-full border border-line text-xl"
+            aria-label="Tutup preview"
+          >
+            ×
+          </button>
+        </div>
+        <video
+          id="modal-video"
+          class="aspect-[9/16] max-h-[65vh] w-full rounded-2xl bg-ink object-contain"
+          controls
+          playsinline
+          preload="metadata"
+        ></video>
+        <p id="modal-description" class="mt-3 text-sm leading-6 text-muted"></p>
+      </div>
+    </div>
+
+    <script src="./js/script.js" defer></script>
+  </body>
+</html>

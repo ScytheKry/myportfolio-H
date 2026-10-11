@@ -1,0 +1,172 @@
+:root {
+  color-scheme: light;
+}
+body {
+  font-family: Inter, sans-serif;
+}
+.display {
+  font-family: "Space Grotesk", sans-serif;
+}
+.mono {
+  font-family: "DM Mono", monospace;
+}
+.grain {
+  background-image: radial-gradient(
+    rgba(23, 34, 29, 0.09) 0.6px,
+    transparent 0.6px
+  );
+  background-size: 6px 6px;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.project-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(23, 34, 29, 0.1);
+}
+.filter-btn[aria-pressed="true"] {
+  background: #17221d;
+  color: #f5f3ed;
+  border-color: #17221d;
+}
+.video-thumb {
+  background: linear-gradient(135deg, #355c49, #9bae8d 55%, #d7f36a);
+}
+.modal-open {
+  overflow: hidden;
+}
+
+/* Skills: horizontal scrolling */
+.skills-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 0.25rem 0 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #68736b transparent;
+  overscroll-behavior-x: contain;
+}
+
+.skills-track::-webkit-scrollbar {
+  height: 5px;
+}
+
+.skills-track::-webkit-scrollbar-thumb {
+  background: #68736b;
+  border-radius: 999px;
+}
+
+.skill-card {
+  flex: 0 0 155px;
+  min-width: 0;
+  scroll-snap-align: start;
+  border: 1px solid rgb(255 255 255 / 15%);
+  border-radius: 1rem;
+  padding: 1rem;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.skill-card:hover {
+  border-color: #d7f36a;
+  transform: translateY(-3px);
+}
+
+/* Kotak logo selalu sama, apa pun ukuran file gambarnya */
+.skill-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  padding: 8px;
+  margin-bottom: 1rem;
+  border-radius: 0.875rem;
+  background: #fff;
+  overflow: hidden;
+}
+
+.skill-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.skill-scroll-btn {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 999px;
+  color: #f5f3ed;
+  font-size: 1.25rem;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.skill-scroll-btn:hover {
+  background: #d7f36a;
+  border-color: #d7f36a;
+  color: #17221d;
+}
+
+.skill-scroll-btn:focus-visible {
+  outline: 2px solid #d7f36a;
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  .skill-card {
+    flex-basis: 175px;
+    padding: 1.25rem;
+  }
+
+  .skill-logo-box {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-track {
+    scroll-behavior: auto;
+  }
+
+  .skill-card {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
