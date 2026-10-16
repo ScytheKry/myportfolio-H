@@ -215,12 +215,12 @@ const programmingProjects = [
     accent: "from-orange-200 to-rose-400",
   },
   {
-    title: "Charity Website",
+    title: "Login Form View",
     category: "Web · UI design",
     description:
-      "Konsep website donasi dengan struktur informasi yang jelas dan alur pengguna yang sederhana.",
-    image: "assets/images/charity.jpg",
-    imageAlt: "Screenshot Charity Website",
+      "Konsep tampilan form login dengan desain UI yang modern dan pengalaman pengguna yang baik.",
+    image: "assets/images/login-form.jpg",
+    imageAlt: "Screenshot Login Form",
     demo: "#",
     source: "https://github.com/",
     status: "Concept project",
