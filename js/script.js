@@ -8,7 +8,7 @@
 
 // SITE CONFIG — ganti dengan informasi milikmu.
 const SITE_CONFIG = {
-  email: "hello@example.com",
+  whatsapp: "6281234567890",
   github: "https://github.com/",
 };
 
@@ -195,10 +195,10 @@ const programmingProjects = [
     category: "API · JavaScript",
     description:
       "Aplikasi cuaca sederhana yang mengambil data dari weather API dan menampilkan kondisi berdasarkan lokasi.",
-    image: "assets/images/weather-app.jpg",
+    image: "assets/images/P1.png",
     imageAlt: "Screenshot Weather App",
-    demo: "#",
-    source: "https://github.com/",
+    demo: "https://scythekry.github.io/weather-H/",
+    source: "https://github.com/ScytheKry/weather-H",
     status: "Personal project",
     accent: "from-sky-200 to-blue-500",
   },
@@ -207,10 +207,10 @@ const programmingProjects = [
     category: "JavaScript · UI",
     description:
       "Kalkulator responsif untuk operasi aritmetika dasar, dengan fokus pada interaksi dan tampilan yang jelas.",
-    image: "assets/images/calculator.jpg",
+    image: "assets/images/P2.png",
     imageAlt: "Screenshot Calculator",
-    demo: "#",
-    source: "https://github.com/",
+    demo: "https://scythekry.github.io/calculator-H/",
+    source: "https://github.com/ScytheKry/calculator-H",
     status: "Personal project",
     accent: "from-orange-200 to-rose-400",
   },
@@ -219,11 +219,23 @@ const programmingProjects = [
     category: "Web · UI design",
     description:
       "Konsep tampilan form login dengan desain UI yang modern dan pengalaman pengguna yang baik.",
-    image: "assets/images/login-form.jpg",
+    image: "assets/images/P3.png",
     imageAlt: "Screenshot Login Form",
-    demo: "#",
-    source: "https://github.com/",
-    status: "Concept project",
+    demo: "https://scythekry.github.io/loginpre-H/",
+    source: "https://github.com/ScytheKry/loginpre-H",
+    status: "Personal project",
+    accent: "from-emerald-200 to-teal-600",
+  },
+  {
+    title: "Music Player",
+    category: "Web · JavaScript",
+    description:
+      "Konsep tampilan pemutar musik dengan desain UI yang menarik dan interaktif, menampilkan kontrol pemutaran dan daftar lagu.",
+    image: "assets/images/P4.png",
+    imageAlt: "Screenshot Music Player",
+    demo: "https://scythekry.github.io/musicplayer-H/",
+    source: "https://github.com/ScytheKry/musicplayer-H/",
+    status: "Personal project",
     accent: "from-emerald-200 to-teal-600",
   },
 ];
@@ -231,31 +243,31 @@ const programmingProjects = [
 // VIDEO PORTRAIT — gunakan file lokal MP4/WebM. Rasio 9:16 dijaga oleh CSS.
 const visualProjects = [
   {
-    title: "Product Stories",
-    type: "Business / Product video",
+    title: "AI Marketing Advertisement",
+    type: "Business Video",
     description:
-      "Video portrait untuk menampilkan produk, detail, dan suasana brand secara singkat.",
-    video: "assets/videos/product-story.mp4",
-    poster: "assets/images/product-story-poster.jpg",
-    tag: "PRODUCT",
+      "Video promosi produk yang dibuat dengan bantuan Gemini AI (Veo 3), menampilkan fitur dan keunggulan produk secara visual.",
+    instagramUrl: "https://www.instagram.com/p/DL4GchiRBuI/",
+    poster: "assets/images/cov1.jpg",
+    tag: "AI VISUAL",
   },
   {
-    title: "Behind the Scene",
-    type: "Business / Process",
+    title: "Online Business Branding",
+    type: "AI Visual Editing",
     description:
-      "Cuplikan proses kerja, pengemasan, persiapan pesanan, atau aktivitas di balik sebuah usaha.",
-    video: "assets/videos/behind-the-scenes.mp4",
-    poster: "assets/images/behind-scenes-poster.jpg",
-    tag: "PROCESS",
+      "Video branding untuk bisnis online yang menampilkan visual dan pesan produk dengan bantuan AI.",
+    instagramUrl: "https://www.instagram.com/p/DaxrySChRql/",
+    poster: "assets/images/cov2.jpg",
+    tag: "AI VISUAL",
   },
   {
-    title: "Visual Diary",
-    type: "Photography / Reels",
+    title: "High Order Sales",
+    type: "E-Commerce",
     description:
-      "Kumpulan visual portrait dengan fokus pada komposisi, warna, momen, dan storytelling.",
-    video: "assets/videos/visual-diary.mp4",
-    poster: "assets/images/visual-diary-poster.jpg",
-    tag: "VISUAL",
+      "Peningkatan omset penjualan produk dari toko online di hari Lebaran yang penuh berkah.",
+    instagramUrl: "https://www.instagram.com/p/DWV2tldj9nG/",
+    poster: "assets/images/cov3.jpg",
+    tag: "BUSINESS E-COMMERCE",
   },
 ];
 
@@ -304,23 +316,72 @@ function renderVisualProjects() {
   $("#visual-grid").innerHTML = visualProjects
     .map(
       (project, index) => `
-        <article class="project-card project-item reveal overflow-hidden rounded-3xl border border-line bg-white" data-kind="visual">
-          <button type="button" class="video-open group relative block w-full overflow-hidden bg-[#DDE5D9] text-left" data-index="${index}" aria-label="Putar preview ${escapeHTML(project.title)}">
-            <div class="video-thumb relative mx-auto aspect-[9/13] w-full max-w-[280px] overflow-hidden sm:aspect-[9/12]">
-              <img src="${escapeHTML(project.poster)}" alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none';">
+        <article
+          class="project-card project-item reveal overflow-hidden rounded-3xl border border-line bg-white"
+          data-kind="visual"
+        >
+          <button
+            type="button"
+            class="video-open group relative block w-full overflow-hidden bg-[#DDE5D9] text-left"
+            data-index="${index}"
+            aria-label="Buka preview ${escapeHTML(project.title)}"
+          >
+            <div class="video-thumb relative mx-auto aspect-[9/16] w-full max-w-[280px] overflow-hidden">
+              <img
+                src="${escapeHTML(project.poster || "")}"
+                alt="Thumbnail ${escapeHTML(project.title)}"
+                loading="lazy"
+                class="absolute inset-0 h-full w-full object-cover"
+                onerror="this.style.display='none';"
+              >
+
               <div class="absolute inset-0 flex flex-col justify-between bg-gradient-to-b from-ink/15 via-transparent to-ink/65 p-4 text-white">
-                <div class="flex items-start justify-between"><span class="mono rounded-full border border-white/40 bg-ink/20 px-2.5 py-1 text-[9px] tracking-widest">${escapeHTML(project.tag)}</span><span class="text-xs">9:16</span></div>
-                <div class="flex items-end justify-between"><span class="display max-w-[75%] text-2xl font-semibold leading-tight">${escapeHTML(project.title)}</span><span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-lime text-xl text-ink transition group-hover:scale-110">▶</span></div>
+                <div class="flex items-start justify-between">
+                  <span class="mono rounded-full border border-white/40 bg-ink/20 px-2.5 py-1 text-[9px] tracking-widest">
+                    ${escapeHTML(project.tag || "VIDEO")}
+                  </span>
+                  <span class="text-xs">9:16</span>
+                </div>
+
+                <div class="flex items-end justify-between gap-3">
+                  <span class="display max-w-[75%] text-2xl font-semibold leading-tight">
+                    ${escapeHTML(project.title)}
+                  </span>
+                  <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-lime text-xl text-ink transition group-hover:scale-110">
+                    ▶
+                  </span>
+                </div>
               </div>
             </div>
           </button>
+
           <div class="p-5">
-            <p class="mono text-[10px] uppercase tracking-widest text-moss">${escapeHTML(project.type)}</p>
-            <h4 class="display mt-2 text-xl font-semibold">${escapeHTML(project.title)}</h4>
-            <p class="mt-2 text-sm leading-6 text-muted">${escapeHTML(project.description)}</p>
+            <p class="mono text-[10px] uppercase tracking-widest text-moss">
+              ${escapeHTML(project.type)}
+            </p>
+
+            <h4 class="display mt-2 text-xl font-semibold">
+              ${escapeHTML(project.title)}
+            </h4>
+
+            <p class="mt-2 text-sm leading-6 text-muted">
+              ${escapeHTML(project.description)}
+            </p>
+
             <div class="mt-5 flex flex-wrap gap-4 border-t border-line pt-4 text-xs font-semibold">
-              <button type="button" class="video-open underline underline-offset-4 hover:text-moss" data-index="${index}">Preview video ↗</button>
-              <span class="text-muted">Portrait / 9:16</span>
+              <button
+                type="button"
+                class="video-open underline underline-offset-4 hover:text-moss"
+                data-index="${index}"
+              >
+                Preview video ↗
+              </button>
+
+              ${
+                project.instagramUrl
+                  ? `<a href="${escapeHTML(project.instagramUrl)}" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4 hover:text-moss">Instagram ↗</a>`
+                  : ""
+              }
             </div>
           </div>
         </article>
@@ -332,7 +393,7 @@ function renderVisualProjects() {
 renderProgrammingProjects();
 renderVisualProjects();
 $("#year").textContent = new Date().getFullYear();
-$("#email-link").href = `mailto:${SITE_CONFIG.email}`;
+$("#phone-link").href = `https://wa.me/+6281772898054`;
 $("#github-link").href = SITE_CONFIG.github;
 
 // Category filter: filters the project cards, works on mobile and desktop.
@@ -371,36 +432,96 @@ mobileMenu.querySelectorAll("a").forEach((link) =>
 );
 
 // Accessible-ish video modal.
+
+/* ================= VIDEO / INSTAGRAM MODAL ================= */
+
 const modal = $("#video-modal");
 const modalVideo = $("#modal-video");
+const modalInstagram = $("#modal-instagram");
+const instagramOpen = $("#instagram-open");
+
 function closeModal() {
+  // Hentikan video lokal
   modalVideo.pause();
   modalVideo.removeAttribute("src");
   modalVideo.load();
+
+  // Hentikan pemutaran Reel dengan melepas iframe
+  modalInstagram.src = "about:blank";
+
+  modalVideo.classList.add("hidden");
+  modalInstagram.classList.add("hidden");
+  instagramOpen.classList.add("hidden");
+  instagramOpen.href = "#";
+
   modal.classList.add("hidden");
   modal.classList.remove("flex");
   document.body.classList.remove("modal-open");
 }
-document.addEventListener("click", (event) => {
-  const trigger = event.target.closest(".video-open");
-  if (!trigger) return;
-  const project = visualProjects[Number(trigger.dataset.index)];
+
+function openModal(project) {
   if (!project) return;
+
   $("#modal-title").textContent = project.title;
   $("#modal-description").textContent = project.description;
-  modalVideo.src = project.video;
+
+  // Reset tampilan sebelumnya
+  modalVideo.pause();
+  modalVideo.removeAttribute("src");
+  modalVideo.load();
+
+  modalVideo.classList.add("hidden");
+  modalInstagram.classList.add("hidden");
+  instagramOpen.classList.add("hidden");
+  instagramOpen.href = "#";
+  modalInstagram.src = "about:blank";
+
+  if (project.instagramUrl) {
+    // Instagram Reel
+    const reelUrl = project.instagramUrl.replace(/\/+$/, "");
+
+    modalInstagram.src = `${reelUrl}/embed/`;
+    modalInstagram.classList.remove("hidden");
+
+    instagramOpen.href = project.instagramUrl;
+    instagramOpen.classList.remove("hidden");
+  } else if (project.video) {
+    // Video MP4 lokal
+    modalVideo.src = project.video;
+    modalVideo.classList.remove("hidden");
+
+    modalVideo.play().catch(() => {
+      // Pengunjung bisa menekan tombol Play secara manual
+    });
+  } else {
+    return;
+  }
+
   modal.classList.remove("hidden");
   modal.classList.add("flex");
   document.body.classList.add("modal-open");
-  modalVideo.play().catch(() => {}); // Browser may require the user to press Play.
+}
+
+// Klik kartu atau tombol Preview
+document.addEventListener("click", (event) => {
+  const trigger = event.target.closest(".video-open");
+  if (!trigger) return;
+
+  const project = visualProjects[Number(trigger.dataset.index)];
+  openModal(project);
 });
+
+// Tutup modal
 $("#modal-close").addEventListener("click", closeModal);
+
 modal.addEventListener("click", (event) => {
   if (event.target === modal) closeModal();
 });
+
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && !modal.classList.contains("hidden"))
+  if (event.key === "Escape" && !modal.classList.contains("hidden")) {
     closeModal();
+  }
 });
 
 // Subtle scroll reveal, with a fallback for browsers without IntersectionObserver.
