@@ -438,21 +438,31 @@ mobileMenu.querySelectorAll("a").forEach((link) =>
 const modal = $("#video-modal");
 const modalVideo = $("#modal-video");
 const modalInstagram = $("#modal-instagram");
-const instagramOpen = $("#instagram-open");
+const modalTikTok = $("#modal-tiktok");
+const modalOpenLink = $("#instagram-open");
 
-function closeModal() {
+function hideAllPlayers() {
   // Hentikan video lokal
   modalVideo.pause();
   modalVideo.removeAttribute("src");
   modalVideo.load();
-
-  // Hentikan pemutaran Reel dengan melepas iframe
-  modalInstagram.src = "about:blank";
-
   modalVideo.classList.add("hidden");
+
+  // Reset Instagram
+  modalInstagram.src = "about:blank";
   modalInstagram.classList.add("hidden");
-  instagramOpen.classList.add("hidden");
-  instagramOpen.href = "#";
+
+  // Reset TikTok
+  modalTikTok.src = "about:blank";
+  modalTikTok.classList.add("hidden");
+
+  // Sembunyikan link eksternal
+  modalOpenLink.classList.add("hidden");
+  modalOpenLink.href = "#";
+}
+
+function closeModal() {
+  hideAllPlayers();
 
   modal.classList.add("hidden");
   modal.classList.remove("flex");
@@ -462,37 +472,50 @@ function closeModal() {
 function openModal(project) {
   if (!project) return;
 
+  // Bersihkan player sebelumnya
+  hideAllPlayers();
+
   $("#modal-title").textContent = project.title;
-  $("#modal-description").textContent = project.description;
-
-  // Reset tampilan sebelumnya
-  modalVideo.pause();
-  modalVideo.removeAttribute("src");
-  modalVideo.load();
-
-  modalVideo.classList.add("hidden");
-  modalInstagram.classList.add("hidden");
-  instagramOpen.classList.add("hidden");
-  instagramOpen.href = "#";
-  modalInstagram.src = "about:blank";
+  $("#modal-description").textContent = project.description || "";
 
   if (project.instagramUrl) {
-    // Instagram Reel
-    const reelUrl = project.instagramUrl.replace(/\/+$/, "");
+    // Instagram post atau Reel
+    const url = project.instagramUrl.trim().replace(/\/+$/, "");
 
-    modalInstagram.src = `${reelUrl}/embed/`;
+    modalInstagram.src = `${url}/embed/`;
     modalInstagram.classList.remove("hidden");
 
-    instagramOpen.href = project.instagramUrl;
-    instagramOpen.classList.remove("hidden");
+    modalOpenLink.href = url;
+    modalOpenLink.textContent = "Tonton di Instagram ↗";
+    modalOpenLink.classList.remove("hidden");
+
+  } else if (project.tiktokUrl) {
+    // Ambil ID video dari URL TikTok
+    const match = project.tiktokUrl.match(/\/video\/(\d+)/);
+
+    if (!match) {
+      window.open(
+        project.tiktokUrl,
+        "_blank",
+        "noopener,noreferrer"
+      );
+      return;
+    }
+
+    modalTikTok.src =
+      `https://www.tiktok.com/player/v1/${match[1]}?controls=1`;
+
+    modalTikTok.classList.remove("hidden");
+
+    modalOpenLink.href = project.tiktokUrl;
+    modalOpenLink.textContent = "Tonton di TikTok ↗";
+    modalOpenLink.classList.remove("hidden");
+
   } else if (project.video) {
-    // Video MP4 lokal
+    // Video lokal MP4
     modalVideo.src = project.video;
     modalVideo.classList.remove("hidden");
 
-    modalVideo.play().catch(() => {
-      // Pengunjung bisa menekan tombol Play secara manual
-    });
   } else {
     return;
   }
@@ -500,6 +523,13 @@ function openModal(project) {
   modal.classList.remove("hidden");
   modal.classList.add("flex");
   document.body.classList.add("modal-open");
+
+  // Putar otomatis hanya untuk video lokal
+  if (project.video && !project.instagramUrl && !project.tiktokUrl) {
+    modalVideo.play().catch(() => {
+      // Pengunjung bisa menekan tombol Play sendiri.
+    });
+  }
 }
 
 // Klik kartu atau tombol Preview
