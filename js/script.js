@@ -252,6 +252,24 @@ const visualProjects = [
     tag: "AI VISUAL",
   },
   {
+    title: "AI Visual Branding",
+    type: "E-Commerce",
+    description:
+      "Video branding untuk bisnis online yang menampilkan visual dan pesan produk dengan bantuan AI.",
+    tiktokUrl: "https://www.tiktok.com/@hahaselling/video/7662161448835026197",
+    poster: "assets/images/cov4.jpg",
+    tag: "AI VISUAL",
+  },
+  {
+    title: "Business Branding with AI",
+    type: "E-Commerce",
+    description:
+      "Video branding untuk bisnis online yang menampilkan visual dan pesan produk dengan bantuan AI.",
+    tiktokUrl: "https://www.tiktok.com/@hahaselling/video/7662198538520235285",
+    poster: "assets/images/cov5.jpg",
+    tag: "AI VISUAL",
+  },
+  {
     title: "Online Business Branding",
     type: "AI Visual Editing",
     description:
@@ -488,34 +506,26 @@ function openModal(project) {
     modalOpenLink.href = url;
     modalOpenLink.textContent = "Tonton di Instagram ↗";
     modalOpenLink.classList.remove("hidden");
-
   } else if (project.tiktokUrl) {
     // Ambil ID video dari URL TikTok
     const match = project.tiktokUrl.match(/\/video\/(\d+)/);
 
     if (!match) {
-      window.open(
-        project.tiktokUrl,
-        "_blank",
-        "noopener,noreferrer"
-      );
+      window.open(project.tiktokUrl, "_blank", "noopener,noreferrer");
       return;
     }
 
-    modalTikTok.src =
-      `https://www.tiktok.com/player/v1/${match[1]}?controls=1`;
+    modalTikTok.src = `https://www.tiktok.com/player/v1/${match[1]}?controls=1`;
 
     modalTikTok.classList.remove("hidden");
 
     modalOpenLink.href = project.tiktokUrl;
     modalOpenLink.textContent = "Tonton di TikTok ↗";
     modalOpenLink.classList.remove("hidden");
-
   } else if (project.video) {
     // Video lokal MP4
     modalVideo.src = project.video;
     modalVideo.classList.remove("hidden");
-
   } else {
     return;
   }
