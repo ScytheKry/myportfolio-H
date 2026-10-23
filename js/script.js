@@ -246,9 +246,27 @@ const visualProjects = [
     title: "AI Marketing Advertisement",
     type: "Business Video",
     description:
-      "Video promosi produk yang dibuat dengan bantuan Gemini AI (Veo 3), menampilkan fitur dan keunggulan produk secara visual.",
+      "Video promosi produk yang dibuat dengan bantuan Gemini AI (Veo 3), menampilkan fitur dan keunggulanproduk secara visual.",
     instagramUrl: "https://www.instagram.com/p/DL4GchiRBuI/",
     poster: "assets/images/cov1.jpg",
+    tag: "AI VISUAL",
+  },
+  {
+    title: "AI Marketing Branding",
+    type: "Business Video",
+    description:
+      "Video branding yang dibuat dengan bantuan Gemini AI (Veo 3), menampilkan maskot kucing sebagai tokoh utama di promo retail.",
+    instagramUrl: "https://www.instagram.com/p/DOztgfbjzXh/",
+    poster: "assets/images/cov6.jpg",
+    tag: "AI VISUAL",
+  },
+  {
+    title: "AI Marketing Advertisement",
+    type: "Business Video",
+    description:
+      "Video branding yang dibuat dengan bantuan Gemini AI (Veo 3), menampilkan promo special belanja.",
+    instagramUrl: "https://www.instagram.com/p/DLzXMm4zrEC/",
+    poster: "assets/images/cov7.jpg",
     tag: "AI VISUAL",
   },
   {
